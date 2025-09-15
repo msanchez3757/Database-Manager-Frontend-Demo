@@ -10,7 +10,7 @@
     <header>
         <div id="bgright"> </div>
         <h1>
-            <a href="index.html">totally not a vndb ripoff</a>
+            <a href="index.html">Database Manager Demo</a>
         </h1>
         <nav>
             <label for="mainmenu">Menu</label>
@@ -64,7 +64,40 @@
         </article>
     </nav>
     <main>
-
+        <div id="widget1">
+            <form novalidate>
+                <fieldset>
+                    <article>
+                        <h1>Login</h1>
+                        <fieldset class="form">
+                            <fieldset>
+                                <label for="username">Username</label>
+                                <input type="text" id="username" tabindex="1" class="mw invalid">
+                                <p class="invalid">
+                                    This field is required
+                                </p>
+                                <p>
+                                    <a href="register.html">No account yet?</a>
+                                </p>
+                            </fieldset>
+                            <fieldset>
+                                <label for="password">Password</label>
+                                <input type="password" id="password" tabindex="1" class="mw invalid">
+                                <p class="invalid">
+                                    This field is required
+                                </p>
+                                <p>
+                                    <a href="">Forgot your password? (check the databse youself)</a>
+                                </p>
+                            <fieldset>
+                                <input type="submit" value="Submit" tabindex="1">
+                                <span class="spinner invisible"></span>
+                            </fieldset>
+                        </fieldset>
+                    </article>
+                </fieldset>
+            </form>
+        </div>
     </main>
 
 </body>

@@ -152,6 +152,23 @@ body>nav article div {
 
 form, fieldset {
     border: 0;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: initial;
+    border-right-style: initial;
+    border-bottom-style: initial;
+    border-left-style: initial;
+    border-top-color: initial;
+    border-right-color: initial;
+    border-bottom-color: initial;
+    border-left-color: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
     display: block;
 }
 
@@ -470,6 +487,121 @@ table tr.odd, table.stripe tbody tr:nth-child(odd):not(.nostripe), .docs table t
     border-bottom: none;
     margin: 0 2px;
     color: inherit;
+}
+
+fieldset.form {
+    margin-left: 140px;
+    margin-bottom: 20px;
+}
+
+fieldset.form>fieldset {
+    margin-bottom: 5px;
+}
+
+fieldset {
+    display: block;
+    min-inline-size: min-content;
+    margin-inline: 2px;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+    padding-block: 0.35em 0.625em;
+    padding-inline: 0.75em;
+}
+
+fieldset.form>label:not(.check), fieldset.form>fieldset>label:not(.check) {
+    display: block;
+    float: left;
+    margin-left: -130px;
+    width: 130px;
+}
+
+fieldset.form .mw {
+    width: 100%;
+    max-width: 200px;
+}
+
+p.invalid {
+    display: none;
+}
+
+main div p, main fieldset p, main table p {
+    margin: 0;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+input{
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+
+input.submit, input[type=submit], input[type=button], button, select {
+    padding: 1px 5px;
+    padding-top: 1px;
+    padding-right: 5px;
+    padding-bottom: 1px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+input.text, input.submit, input[type=text], input[type=password], input[type=email], input[type=button], input[type=submit], select, textarea, button {
+    background-color: var(--boxbg);
+    color: var(--maintext);
+    border: 1px solid var(--secborder);
+    font: 14px "Tahoma", "Arial", sans-serif;
+    padding: 1px;
+    margin: 1px;
+}
+
+input:not([type="image" i], [type="range" i], [type="checkbox" i], [type="radio" i]) {
+    overflow-clip-margin: 0px !important;
+    overflow: clip !important;
+}
+
+input[type="submit" i] {
+    appearance: auto;
+    user-select: none;
+    text-align: center;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    color: buttontext;
+    white-space: pre;
+    padding-block: 1px;
+    padding-inline: 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+
+spin animation {
+    transform: rotate(38.124deg);
+}
+
+span.spinner {
+    width: 1em;
+    height: 1em;
+}
+
+.spinner {
+    content: '';
+    border: 3px solid #9eaebd;
+    border-bottom-color: transparent;
+    border-radius: 100%;
+    animation: spin 1s infinite linear;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin: auto;
+}
+
+.invisible {
+    visibility: hidden;
 }
 
 

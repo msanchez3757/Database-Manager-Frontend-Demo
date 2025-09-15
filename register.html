@@ -10,7 +10,7 @@
     <header>
         <div id="bgright"> </div>
         <h1>
-            <a href="index.html">totally not a vndb ripoff</a>
+            <a href="index.html">Database Manager Demo</a>
         </h1>
         <nav>
             <label for="mainmenu">Menu</label>
@@ -64,8 +64,92 @@
         </article>
     </nav>
     <main>
-
+        <div id="widget1">
+            <form novalidate>
+                <fieldset>
+                    <article>
+                        <h1>Create an account</h1>
+                        <fieldset class="form">
+                            <fieldset>
+                                <label for="username">Username</label>
+                                <input type="text" id="username" class="mw invalid">
+                                <p class="invalid">This field is required</p>
+                                <p>
+                                    Usernames must be between 3 and 20 characters long and can only contain letters, numbers, underscores and hyphens.
+                                </p>
+                            </fieldset>
+                            <fieldset>
+                                <label for="password">Password</label>
+                                <input type="password" id="password" class="mw invalid">
+                                <p class="invalid">This field is required</p>
+                                <p>
+                                    Make it really simple so you don't forget it.
+                                    <br>
+                                    This is just a demo site after all.
+                                </p>
+                            </fieldset>
+                            <fieldset>
+                                <label class="check">
+                                    <input type="checkbox" id="tos">
+                                    I agree to the Terms of Service (there are none)
+                                </label>
+                                <p class="invalid">
+                                    you must check the tos box (there are no tos anyway)
+                                </p>
+                            </fieldset>
+                            <fieldset>
+                                <label class="check">
+                                    <input type="checkbox" id="ccheck">
+                                    I click checkboxes without reading them
+                                </label>
+                            </fieldset>
+                            <fieldset>
+                                <input type="submit" value="submit">
+                                <span class="spinner invisible"></span>
+                            </fieldset>
+                        </fieldset>
+                    </article>
+                </fieldset>
+            </form>
+        </div>
+        <footer>
+            <span>Something ought to go here i guess</span>
+            <br>
+            <a href="">about me</a>
+             | 
+            <a href="">contact</a>
+        </footer>
     </main>
 
+
+    
+
+    <script src="js/auth.js"></script>
+    <script>
+        document.querySelector('form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+    
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const tosChecked = document.getElementById('tos').checked;
+    
+        const spinner = document.querySelector('.spinner');
+        spinner.classList.remove('invisible');
+    
+        try {
+            if (!tosChecked) {
+                throw new Error('Please accept the Terms of Service');
+            }
+        
+            await authService.register(username, password);
+            window.location.href = '/login.html';
+        
+         } catch (error) {
+            alert(error.message);
+        } finally {
+            spinner.classList.add('invisible');
+        }
+    });
+    </script>
 </body>
 </html>
